@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [\App\Http\Controllers\PokemonController::class, 'index']);
+Route::post('/get-pokemon-info', [\App\Http\Controllers\PokemonController::class, 'getPokemonInfo'])->name('get-pokemon-info');
